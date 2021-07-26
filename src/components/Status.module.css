@@ -1,0 +1,19 @@
+.statusbox{
+    border: .1em solid black;
+    width: 5em;
+    height: 5em;
+    margin: .2em;
+    box-sizing: border-box;
+}
+
+.normal {
+    background-color: green;
+}
+
+.degraded {
+    background-color: yellow;
+}
+
+.outage {
+    background-color: red;
+}
