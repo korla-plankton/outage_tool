@@ -1,17 +1,27 @@
-import Status from './components/Status.js'
+import CommunityStatus from './components/CommunityStatus.js'
+
+const communities = [
+  "Arctic Bay",
+  "Arviat",
+  "Baker Lake",
+  "Cambrige Bay",
+  "Cape Dorset",
+  "Chesterfield Inlet",
+  "Clyde River",
+  "Coral Harbour",
+  "Gjoa Haven",
+  "Hall Beach",
+  "Igloolik",
+  "Iqaluit",
+]
 
 function App() {
   // code to store results of Current Outages from Jira
   return (
     <div className="App">
-      {/*
-        The below tags are for demonstration
-        In reality we need to iterate over the 
-        communities and current outages
-      */}
-      <Status state="normal"/>
-      <Status state="degraded"/>
-      <Status state="outage"/>
+      {communities.map((community,index) => (
+        <CommunityStatus key={index} community={community} />
+      ))}
     </div>
   );
 }
