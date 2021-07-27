@@ -7,7 +7,7 @@ const CommunityStatus = (props) => {
         <div>
             <Status service="GSM" state={compState}/>
             <Status service="LTE" state={compState}/>
-            <Status service="Management" state={compState}/>
+            <Status service="MGT" state={compState}/>
             {community}
 
         </div>
