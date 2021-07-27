@@ -15,6 +15,12 @@ const communities = [
   "Iqaluit",
 ]
 
+const request = new XMLHttpRequest();
+const url = 'https://jira.ssimicro.com/rest/auth/1/session';
+request.open("POST", url);
+request.send();
+console.log(request.response)
+
 function App() {
   // code to store results of Current Outages from Jira
   return (
