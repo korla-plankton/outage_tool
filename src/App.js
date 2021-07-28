@@ -1,4 +1,5 @@
 import CommunityStatus from './components/CommunityStatus.js'
+import LoginForm from './components/LoginForm.js'
 
 const communities = [
   "Arctic Bay",
@@ -25,6 +26,7 @@ function App() {
   // code to store results of Current Outages from Jira
   return (
     <div className="App">
+      <LoginForm />
       {communities.map((community,index) => (
         <CommunityStatus key={index} community={community} />
       ))}
