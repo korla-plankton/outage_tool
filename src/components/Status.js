@@ -11,8 +11,11 @@ function Status(props) {
     case "outage":
       output = <span className={`${styles.outage} ${styles.statusbox}`}> {service}</span>;
       break;
+    case "normal":
+      output = <span className={`${styles.normal} ${styles.statusbox}`}> {service}</span>;
+      break;
     default:
-      output = <span className={`${styles.normal} ${styles.statusbox}`}>{service}</span>;
+      output = <span className={`${styles.unknown} ${styles.statusbox}`}>{service}</span>;
   }
   return output
 }

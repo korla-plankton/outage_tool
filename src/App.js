@@ -1,35 +1,31 @@
-import CommunityStatus from './components/CommunityStatus.js'
-import LoginForm from './components/LoginForm.js'
+import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-const communities = [
-  "Arctic Bay",
-  "Arviat",
-  "Baker Lake",
-  "Cambrige Bay",
-  "Cape Dorset",
-  "Chesterfield Inlet",
-  "Clyde River",
-  "Coral Harbour",
-  "Gjoa Haven",
-  "Hall Beach",
-  "Igloolik",
-  "Iqaluit",
-]
-
-const request = new XMLHttpRequest();
-const url = 'https://jira.ssimicro.com/rest/auth/1/session';
-request.open("POST", url);
-request.send();
-console.log(request.response)
+import './App.css';
+import Dashboard from './components/Dashboard/Dashboard.js';
+import Login from './components/Login/Login.js'
+import Preferences from './components/Preferences/Preferences.js';
 
 function App() {
-  // code to store results of Current Outages from Jira
+  const [token, setToken] = useState();
+
+if(!token) {
+  return <Login setToken={setToken} />
+}
+
   return (
-    <div className="App">
-      <LoginForm />
-      {communities.map((community,index) => (
-        <CommunityStatus key={index} community={community} />
-      ))}
+    <div className="wrapper">
+      <h1>Application</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/preferences">
+            <Preferences />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
