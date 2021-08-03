@@ -15,7 +15,7 @@ if(!token) {
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <h1>Status of community services</h1>
       <BrowserRouter>
         <Switch>
           <Route path="/dashboard">
